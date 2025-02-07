@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB storage</title>
+</head>
+<body>
+    <h1>O Web Storage</h1>
+    <p>é uma tecnologia do HTML5 que permite armazenar dados no navegador do usuário de forma mais eficiente do que os cookies. Ele oferece duas formas principais de armazenamento: <br> LocalStorage → Armazena dados permanentemente, mesmo após fechar o navegador.
+    SessionStorage → Armazena dados temporariamente, sendo apagados ao fechar a aba ou o navegador.</p>
+
+    <button onclick="save_information()">
+        <h2>Salvar informações</h2>
+    </button>
+
+    <script type="text/javascript">
+
+        function save_information(){
+            if (typeof(Storage) !== "Undefined!"){
+                localStorage.setItem("lastname", "Oliveira");
+            }
+
+            // o localStorage guarda as informações para sempre, a menos que o user limpe o cache do navegador
+            // também temos o sessionStorage, que dura somente enquanto o user está com o navegador aberto
+
+            else{
+                alert("Seu navegador não suporta web storage!");
+            }
+        }
+
+    </script>
+</body>
+</html>
